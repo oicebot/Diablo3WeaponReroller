@@ -8,9 +8,9 @@ Email : oicebot@qq.com
 Weibo：  @游荡的坎德人
 Twitter: @Oicebot
 
-This file published under GPLv3. 
+This file published under GPLv3.
 
-All Weapon Data came from Weapon Reroll Calculator at: 
+All Weapon Data came from Weapon Reroll Calculator at:
 http://us.battle.net/d3/en/forum/topic/15699487088
 
 Thanks to /u/Might_be_a_terrorist, /u/MFiftyOne & /u/Kortiah
@@ -79,19 +79,19 @@ class Application_ui(Frame):
         self.Check1 = Checkbutton(self.top, text=u'我这是远古的', variable=self.Check1Var,
                                   style='TCheck1.TCheckbutton',  command=self.UpdateInfo)
         self.Check1.place(relx=0.716, rely=0.062, relwidth=0.248, relheight=0.056,)
-        
+
         self.Text4Var = StringVar(value='1385')
         self.Text4 = Entry(self.top, textvariable=self.Text4Var, font=(u'宋体',9))
         self.Text4.place(relx=0.02, rely=0.305, relwidth=0.228, relheight=0.045)
         self.Text4.bind('<Return>',self.Caculate)
         self.Text4.bind('<KP_Enter>',self.Caculate)
-                
+
         self.Text5Var = StringVar(value='1639')
         self.Text5 = Entry(self.top, textvariable=self.Text5Var, font=(u'宋体',9))
         self.Text5.place(relx=0.266, rely=0.305, relwidth=0.207, relheight=0.045)
         self.Text5.bind('<Return>',self.Caculate)
-        self.Text5.bind('<KP_Enter>',self.Caculate)        
-        
+        self.Text5.bind('<KP_Enter>',self.Caculate)
+
         self.Combo3List = ['0','6','7','8','9','10',]
         self.Combo3Var = StringVar(value='0')
         self.Combo3 = Combobox(self.top, state='readonly', text='0',
@@ -143,13 +143,13 @@ class Application_ui(Frame):
         self.style.configure('TTLabel.TLabel', anchor='w', font=(u'宋体',9))
         self.TLabel = Label(self.top, text=u'武器类型', style='TTLabel.TLabel')
         self.TLabel.place(relx=0.02, rely=0.072, relwidth=0.15, relheight=0.038)
-        
+
         self.style.configure('TLabel3.TLabel', anchor='w', foreground='#424242', font=(u'宋体',8))
-        self.Label3 = Label(self.top, 
+        self.Label3 = Label(self.top,
                  text=u'Data From:/u/might_be_a_terrorist  Build:20150818 by Oiceot @ Ellesime',
                 style='TLabel3.TLabel')
         self.Label3.place(relx=0.05, rely=0.965, relwidth=0.999, relheight=0.035)
-        
+
         #----------------------- LabelDMG LabelSPD Label5
 
         self.LabelDMG_Var = StringVar(value='450.5')
@@ -216,6 +216,7 @@ class Application(Application_ui):
     def __init__(self, master=None):
         Application_ui.__init__(self, master)
         #Entire Weapon Caculate Info
+        #Weapon Name | APS | Average Base | Max Regular Bonus | Max Ancient Bonus
         self.WeaponTable = { u'单手钉锤': [1.20, 450.5,  1344.5, 1750],
                              u'武杖':    [1.15, 1419.5, 1613.5, 2098],
                              u'双手钉锤': [1,    1824.5, 1613.5, 2098],
@@ -224,20 +225,21 @@ class Application(Application_ui):
                              u'拳套武器':[1.4,      280, 1344.5, 1750],
                              u'单手连枷':[1.4,    273.5, 1344.5, 1750],
                              u'双手连枷':[1.15,  1418.5, 1613.5, 2098],
-                             u'弩枪':   [1.6,      420, 1176.5, 1750],
-                             u'弓':     [1.4,     479, 1344.5, 1750],
-                             u'弩':     [1.1,     862, 1344.5, 1750],
-                             u'魔杖':   [1.4,      275, 1344.5, 1750],
-                             u'单手斧':  [1.3,     355, 1344.5, 1750],
-                             u'单手剑':  [1.4,     280, 1344.5, 1750],
-                             u'匕首':   [1.5,      214, 1344.5, 1533],
-                             u'矛':     [1.2,    439.5, 1344.5, 1750],
-                             u'祭祀刀':  [1.4,      293, 1344.5, 1750],
-                             u'长柄武器':[1.05,    1660, 1613.5, 2098],
-                             u'双手法杖':[1.1,     1534, 1613.5, 2098],
+                             u'弩枪':    [1.6,      420, 1176.5, 1750],
+                             u'弓':      [1.4,     479, 1344.5, 1750],
+                             u'弩':      [1.1,     862, 1344.5, 1750],
+                             u'魔杖':     [1.4,      275, 1344.5, 1750],
+                             u'单手斧':   [1.3,     355, 1344.5, 1750],
+                             u'单手剑':    [1.4,     280, 1344.5, 1750],
+                             u'匕首':      [1.5,      214, 1344.5, 1533],
+                             u'矛':       [1.2,    439.5, 1344.5, 1750],
+                             u'祭祀刀':    [1.4,      293, 1344.5, 1750],
+                             u'长柄武器':  [1.05,    1660, 1613.5, 2098],
+                             u'双手法杖':  [1.1,     1534, 1613.5, 2098],
                              u'双手重武器':[1.1,    1535.5, 1613.5, 2098],
                              u'单手重武器':[1.3,    355, 1344.5, 1750],
                 }
+        #This can be updated manually
 
 
     def UpdateInfo(self, event=None):

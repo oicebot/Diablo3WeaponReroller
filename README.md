@@ -22,7 +22,8 @@ Thanks to */u/Might\_be\_a\_terrorist*, /u/MFiftyOne & /u/Kortiah
 In this Repo:
 -----------
 
-* _D3WeaponReroll.pyw_ is the main code, it can be run directly under Linux and/or other Python-installed OS
+* _D3WeaponReroll.pyw_ is the main code, it can be run directly under Linux and/or other Python-installed OS 
+* Weapon Data is stored in `self.WeaponTable` in the Application class. It could be updated manually.  
 * I used [Visual Tkinter](https://github.com/cdhigh/Visual-Tkinter-for-Python) when build the GUI, so all other files were created by VB6.0 when design the interface.
 * I used py2exe to build stand alone executables using setup.py 
 
